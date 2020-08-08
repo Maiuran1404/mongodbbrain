@@ -3,20 +3,31 @@ import styled from "styled-components";
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 const { isEmpty } = require('lodash');
 
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  grid-template-rows: repeat(3, auto);
+  overflow: hidden;
+  gap: 0px 0px;
+`
 
 const Container = styled.div`
+
   position: relative;
-  margin-top: 0px;
+  margin-top: 10px;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   width: 300px;
   height: 100px;
-  margin: 20px;
+  margin: 18px;
   padding: 10px;
   overflow: hidden;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+    /* padding: 11px; */
+    margin: 20px;
+  }
 `;
 
 const Content = styled.div`
@@ -26,8 +37,6 @@ const Content = styled.div`
   padding: 20px;
   justify-content: space-between;
   align-items: center;
-  
-  
 `;
 
 const ContentColumn = styled.div`
@@ -36,7 +45,7 @@ const ContentColumn = styled.div`
 
 const Title = styled.span`
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   color: ${props => props.color};
   display: block;
   margin-bottom: 8px;
@@ -44,6 +53,7 @@ const Title = styled.span`
 
 const Subtitle = styled.span`
   font-size: 14px;
+  font-weight: 400;
   color: ${props => props.color};
 `;
 
@@ -85,19 +95,21 @@ class DisplayTopics extends Component {
             <Fragment>
               {!isEmpty(topics) ? 
                 <Fragment>
-
-                {topics.map(({ topicTitle, description, _id }, key) => (
-                <Container>
-                        <Content>
-                            <ContentColumn onClick={(e) => {e.preventDefault(); window.location.href=`/topics/${_id}`;}}>
-                                <Title color='red'>{topicTitle}</Title>
-                                <Subtitle color='green'>{description}</Subtitle>
-                            </ContentColumn>
-          
-                        </Content>
-                </Container>
-                ))}
-
+                
+                  <Wrapper>
+                    {topics.map(({ topicTitle, description, _id }) => (
+                        <Container>
+                            <Content >
+                                <ContentColumn key={_id} onClick={(e) => {e.preventDefault(); window.location.href=`/topics/${_id}`;}}>
+                                    <Title>{topicTitle}</Title>
+                                    <Subtitle>{description}</Subtitle>
+                                </ContentColumn>
+                                
+                            </Content>
+                          </Container>
+                      ))}
+                  </Wrapper>
+                  
                 </Fragment> : null}
         </Fragment>
 

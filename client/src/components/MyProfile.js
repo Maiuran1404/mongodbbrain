@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { motion } from "framer-motion";
-import memoji from './memoji.png';
+import memoji from './memoji.jpg';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -16,12 +16,6 @@ const Container = styled.div`
     margin-top: 30px;
     width: 600px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  /* grid-template-columns: 40px 50px */
-  /* grid-template-rows: 25% 100px auto; */
-  /* align-items: flex-end; */
-  /* width: 30% ;
-  margin: 20px;
-  padding: 10px; */
 `
 
 const Subtitle = styled.p`
