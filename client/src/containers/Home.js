@@ -1,7 +1,38 @@
 import React, { Component } from 'react';
 import Form from '../components/Form';
+import MyProfile from '../components/MyProfile';
 import DisplayTopics from '../components/DisplayTopics';
 import axios from 'axios';
+import styled from 'styled-components';
+
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 600px;
+  /* gap: 1px 1px; */
+  grid-template-areas: "Intro Intro Search Search" "Main Main Main Main" "Main Main Main Main";
+  
+`
+
+const Search = styled.div`
+  grid-area: Search;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+`
+
+const Intro = styled.div`
+  grid-area: Intro;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+`
+
+const Main = styled.div`
+  grid-area: Main;
+  margin-top: 0px;
+  margin-left: 100px;
+`
 
 class Home extends Component {
 
@@ -54,10 +85,11 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Form addTopic={this.addTopic}/>
-        <DisplayTopics topics={this.state.topics} removeTopic={this.removeTopic} />
-      </div>
+      <Container>
+        <Intro><MyProfile /></Intro>
+        <Search><Form addTopic={this.addTopic} style={Search}/></Search>
+        <Main><DisplayTopics style={Main} topics={this.state.topics} removeTopic={this.removeTopic} /></Main>
+      </Container>
     );
   }
 }

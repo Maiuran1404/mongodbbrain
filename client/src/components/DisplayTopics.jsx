@@ -5,30 +5,28 @@ const { isEmpty } = require('lodash');
 
 
 const Container = styled.div`
-  /* position: relative; */
-  background: url(${props => props.bgPhoto}), ${props => props.bgColor};
-  background-position: center top;
-  background-size: cover;
-  border-radius: 8px 8px 10px 10px;
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
+  position: relative;
+  margin-top: 0px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04);
   display: grid;
-  grid-template-columns: 30% 70%;
-  /* grid-template-columns: 40px 50px */
-  /* grid-template-rows: 25% 100px auto; */
-  /* align-items: flex-end; */
-  width: 30% ;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 300px;
+  height: 100px;
   margin: 20px;
   padding: 10px;
+  overflow: hidden;
 `;
 
 const Content = styled.div`
-  border-radius: 0px 0px 8px 8px;
-  background-color: white;
-  /* width: 100%; */
+  width: 280px;
+  height: 100px;
+  margin-bottom: 20px;
   padding: 20px;
-  /* display: flex; */
   justify-content: space-between;
   align-items: center;
+  
   
 `;
 
@@ -85,26 +83,22 @@ class DisplayTopics extends Component {
 
         return (
             <Fragment>
-{!isEmpty(topics) ? 
-                
+              {!isEmpty(topics) ? 
                 <Fragment>
+
                 {topics.map(({ topicTitle, description, _id }, key) => (
                 <Container>
                         <Content>
-                            <ContentColumn>
+                            <ContentColumn onClick={(e) => {e.preventDefault(); window.location.href=`/topics/${_id}`;}}>
                                 <Title color='red'>{topicTitle}</Title>
                                 <Subtitle color='green'>{description}</Subtitle>
                             </ContentColumn>
-                            
-                            <IconContainer iconColor='yellow'>
-                            <i  />
-                            </IconContainer>
-                        
+          
                         </Content>
                 </Container>
                 ))}
-        </Fragment> : null}
-                
+
+                </Fragment> : null}
         </Fragment>
 
 

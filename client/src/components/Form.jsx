@@ -1,6 +1,28 @@
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  
+    
+    /* background-position: center top; */
+    background-size: cover;
+    border-radius: 10px 10px 10px 10px;
+    /* box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07); */
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    width: 600px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  /* grid-template-columns: 40px 50px */
+  /* grid-template-rows: 25% 100px auto; */
+  /* align-items: flex-end; */
+  /* width: 30% ;
+  margin: 20px;
+  padding: 10px; */
+`
 
 class Form extends Component {
   state = {
@@ -36,27 +58,30 @@ class Form extends Component {
   };
   render() {
     return (
-      <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
-        <h2> Digital Brain anno 2020 </h2>
-        <TextField
-          id="standard-dense"
-          value={this.state.topicTitle}
-          label="Topic Title"
-          name="topicTitle"
-          onChange={this.handleChange}
-        />
+      <Container>
+        <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
+          <h2> Digital Brain </h2>
+          <TextField
+            id="standard-dense"
+            value={this.state.topicTitle}
+            label="Topic Title"
+            name="topicTitle"
+            onChange={this.handleChange}
+          />
 
-        <TextField
-          name="description"
-          value={this.state.description}
-          id="standard-dense"
-          onChange={this.handleChange}
-          label="description"
-        />
+          <TextField
+            name="description"
+            value={this.state.description}
+            id="standard-dense"
+            onChange={this.handleChange}
+            label="description"
+          />
 
-        <Button variant="contained" color="primary" onClick={this.submit}> Submit </Button>
+          <Button variant="contained" color="primary" onClick={this.submit}> Submit </Button>
 
-      </form>
+        </form>
+      </Container>
+
     );
   }
 }
