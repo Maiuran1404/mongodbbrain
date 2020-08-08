@@ -13,6 +13,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   position: relative;
+  background-color: white;
+  color: black;
   margin-top: 10px;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04);

@@ -8,6 +8,7 @@ import styled from 'styled-components';
 const CheckBoxWrapper = styled.div`
   position: relative; 
   margin: 20px;
+  margin-left: 600px;
 `;
 const CheckBoxLabel = styled.label`
   position: absolute;
@@ -64,6 +65,22 @@ const Wrapper = styled.div`
 `
 
 const PlusButton = styled.button`
+  color: black;
+  padding: 5px;
+  background-color: white;
+  margin-left: 930px;
+  margin-top: 10px;
+  height: 70px;
+	width: 120px;
+  border-radius: 30%;
+  border-color: white;
+  border: none;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04);
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+    transform: rotateY(15deg);
+  }
 
 `
 
@@ -191,7 +208,7 @@ class Home extends Component {
           
           {/* <Search><Form addTopic={this.addTopic} style={Search}/></Search> */}
           <Main>
-            <button onClick={this.handleClick.bind(this, 'Form')}> Add new Topic </button>
+            <PlusButton onClick={this.handleClick.bind(this, 'Form')}> Add new Topic </PlusButton>
             {this._renderSubComp()}
             <DisplayTopics style={Main} topics={this.state.topics} removeTopic={this.removeTopic} />
           </Main>
@@ -216,7 +233,7 @@ class Home extends Component {
           
           {/* <Search><Form addTopic={this.addTopic} style={Search}/></Search> */}
           <Main>
-            <button onClick={this.handleClick.bind(this, 'Form')}> Add new Topic </button>
+            <PlusButton onClick={this.handleClick.bind(this, 'Form')}> Add new Topic </PlusButton>
             {this._renderSubComp()}
             <DisplayTopics style={Main} topics={this.state.topics} removeTopic={this.removeTopic} />
           </Main>

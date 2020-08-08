@@ -60,7 +60,6 @@ class Form extends Component {
     return (
       <Container>
         <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
-          <h3> Create topic </h3>
           <TextField
             id="standard-dense"
             value={this.state.topicTitle}
@@ -77,7 +76,7 @@ class Form extends Component {
             label="description"
           />
 
-          <Button variant="contained" color="primary" onClick={this.submit}> Submit </Button>
+          <Button onClick={this.submit}> Submit </Button>
 
         </form>
       </Container>
