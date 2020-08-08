@@ -12,7 +12,6 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-
   position: relative;
   margin-top: 10px;
   border-radius: 10px 10px 10px 10px;
@@ -46,7 +45,6 @@ const ContentColumn = styled.div`
 const Title = styled.span`
   font-size: 16px;
   font-weight: 700;
-  color: ${props => props.color};
   display: block;
   margin-bottom: 8px;
 `;
@@ -54,28 +52,6 @@ const Title = styled.span`
 const Subtitle = styled.span`
   font-size: 14px;
   font-weight: 400;
-  color: ${props => props.color};
-`;
-
-const TagContainer = styled.div`
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  background-color: ${props => props.tagBg};
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  padding: 3px;
-  width: 2000px;
-  border-radius: 3px;
-  text-align: center;
-  color: ${props => props.tagColor};
-`;
-
-const TagText = styled.span``;
-
-const IconContainer = styled.div`
-  color: ${props => props.iconColor};
 `;
 
 

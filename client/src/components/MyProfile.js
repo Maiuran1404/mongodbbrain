@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { motion } from "framer-motion";
-import memoji from './memoji.jpg';
+import memoji from './memojiboy.png';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -54,7 +54,7 @@ class MyProfile extends Component {
                     // transition={{ delay: 0.3 }}
                     key='image'
                     src={memoji}
-                    width={150}/>
+                    width={200}/>
 
                     <div>
                         <Subtitle 

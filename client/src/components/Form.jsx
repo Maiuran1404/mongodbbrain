@@ -60,7 +60,7 @@ class Form extends Component {
     return (
       <Container>
         <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
-          <h2> Digital Brain </h2>
+          <h3> Create topic </h3>
           <TextField
             id="standard-dense"
             value={this.state.topicTitle}
