@@ -39,7 +39,7 @@ const CheckBox = styled.input`
   width: 42px;
   height: 26px;
   &:checked + ${CheckBoxLabel} {
-    background: #4fbe79;
+    background: #8d2663;
     &::after {
       content: "";
       display: block;
@@ -59,7 +59,7 @@ const WholeWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  background-color: ${props => props.primary ? "black" : "white"};;
+  background-color: ${props => props.primary ? "#2d2d2d" : "white"};;
   color: ${props => props.primary ? "white" : "black"};
   height: 100vh;
 `
@@ -67,10 +67,10 @@ const Wrapper = styled.div`
 const PlusButton = styled.button`
   color: black;
   padding: 5px;
-  background-color: white;
+  background-color: #7C9CBF;
   margin-left: 930px;
   margin-top: 10px;
-  height: 70px;
+  height: 50px;
 	width: 120px;
   border-radius: 30%;
   border-color: white;
@@ -81,7 +81,6 @@ const PlusButton = styled.button`
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
     transform: rotateY(15deg);
   }
-
 `
 
 const Container = styled.div`
@@ -114,7 +113,6 @@ const Main = styled.div`
   margin-top: 0px;
   margin-left: 100px;
 `
-
 class Home extends Component {
 
   constructor(props) {
@@ -192,11 +190,14 @@ class Home extends Component {
 
     return (
       <WholeWrapper>
+        
         {this.state.night ?  
         <Wrapper primary>
-
+          
         <Container>
-          <Intro><MyProfile /></Intro>
+        
+          <Intro>
+            <MyProfile /></Intro>
           
           <Search>
             <CheckBoxWrapper>
