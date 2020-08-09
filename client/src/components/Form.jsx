@@ -55,6 +55,7 @@ class Form extends Component {
         });
       })
       // .catch(() => alert('Failed uploading data'))
+    window.location.reload(); 
   };
   render() {
     return (

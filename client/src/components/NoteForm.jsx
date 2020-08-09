@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 22px;
+margin-top: 0px;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 30px;
+display: flex;
+`
+
 
 class NoteForm extends Component {
   state = {
@@ -31,11 +43,14 @@ class NoteForm extends Component {
         });
       })
       // .catch(() => alert('Failed uploading data'))
+    window.location.reload(); 
   };
   render() {
     return (
       <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
-        <h2> New Note  </h2>
+        
+        <Title> New Note  </Title>
+
         <TextField
           id="standard-dense"
           value={this.state.note}
