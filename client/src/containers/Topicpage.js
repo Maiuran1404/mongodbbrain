@@ -18,9 +18,10 @@ class Topicpage extends Component {
     // this.addTopic = this.addTopic.bind(this);
 }
 
+  compon
 
   componentDidMount = () => {
-    this.fetchTopic();
+    // this.fetchTopic();
   };
 
   componentWillMount = () => {
