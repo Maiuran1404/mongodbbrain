@@ -19,7 +19,7 @@ class App extends Component {
               <Switch>
                 
                 <Route exact path="/" component={Home} />
-                <Route path="/topics/:topic" component={Topicpage} />
+                <Route path="/mytopics/:topic" component={Topicpage} />
                 {/* <Route render={
                   () => <h3>Oops, we couldn't find this page. Try reverting to homes</h3>
                 }/> */}

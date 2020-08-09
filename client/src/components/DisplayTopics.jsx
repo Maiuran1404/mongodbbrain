@@ -78,7 +78,7 @@ class DisplayTopics extends Component {
                     {topics.map(({ topicTitle, description, _id }) => (
                         <Container>
                             <Content >
-                                <ContentColumn key={_id} onClick={(e) => {e.preventDefault(); window.location.href=`/topics/${_id}`;}}>
+                                <ContentColumn key={_id} onClick={(e) => {e.preventDefault(); window.location.href=`/mytopics/${_id}`;}}>
                                     <Title>{topicTitle}</Title>
                                     <Subtitle>{description}</Subtitle>
                                 </ContentColumn>
