@@ -25,8 +25,9 @@ class Topicpage extends Component {
   componentWillMount = () => {
     const topicId = decodeURI((this.props.match.params.topic).trim());
     this.setState({
-        topicId: topicId
+      topicId: topicId
     })
+    
     
   }
 
@@ -40,12 +41,15 @@ class Topicpage extends Component {
       console.log('Myaoooo' + this.state.topicId)
       axios.get(`/topics/${this.state.topicId}`)
         .then((response) => {
-            console.log(response.data)
+            console.log('sdfsdf',response.data)
+            const { notes } = this.state;
+            let newNotes = response.data.notes
+            console.log('wakanda',newNotes)
+
             this.setState({
                 topicTitle: response.data.topicTitle,
                 description: response.data.description,
-    
-                notes: this.state.notes.push(response.data.notes)
+                notes: newNotes
             })
             console.log('Peteee' + this.state.notes)
         })
@@ -74,17 +78,19 @@ class Topicpage extends Component {
 
 
   render() {
+    const { notes} = this.state
+    console.log('haloå, no',notes)
     return (
       <div>
           <NoteForm _id={this.state.topicId} />
           <h1>{this.state.topicId}</h1>
           <p>{this.state.topicTitle}</p>
           <p>{this.state.description}</p>
-          <p>{this.state.notes}</p>
+          {/* <p>{this.state.notes}</p> */}
         {console.log('Maayoo' + this.state.notes)}
           {
-              this.state.notes.length > 0 && this.state.notes.map((note) => (
-                    <p>{note}</p>
+              this.state.notes.length > 0 && this.state.notes.map((note, i) => (
+                    <p key={i}>{note.note}</p>
               ))
           }
       </div>

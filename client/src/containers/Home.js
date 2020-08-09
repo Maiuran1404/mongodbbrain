@@ -51,9 +51,6 @@ const CheckBox = styled.input`
     }
   }
 `;
-
-
-
 const WholeWrapper = styled.div`
 
 `
