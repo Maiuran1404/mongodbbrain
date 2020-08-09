@@ -9,12 +9,14 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(3, 360px);
   grid-template-rows: repeat(3, auto);
   overflow: hidden;
+  background: #2d2d2d;
+  height: 100vh;
   gap: 0px 0px;
 `
 
 const HeadContainer = styled.div`
   position: relative;
-  background-color: white;
+  
 `
 
 const Container = styled.div`
@@ -32,10 +34,8 @@ const Container = styled.div`
   overflow: hidden;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   &:hover{
-    cursor: pointer;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
     /* padding: 11px; */
-    margin: 20px;
   }
 `;
 
@@ -66,18 +66,19 @@ const Subtitle = styled.span`
 
 const TopicTitle = styled.h1`
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-font-size: 22px;
+font-size: 30px;
 margin-top: 0px;
 margin-left: 100px;
 margin-right: 10px;
 margin-top: 30px;
 margin-bottom: 5px;
 display: flex;
+color: white;
 `
 
 const TopicSubtitle = styled.p`
     color: #7C9CBF;
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 0px;
     margin-left: 100px;
     margin-right: 10px;

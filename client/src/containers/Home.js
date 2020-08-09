@@ -26,7 +26,7 @@ const CheckBoxLabel = styled.label`
     width: 18px;
     height: 18px;
     margin: 3px;
-    background: #ffffff;
+    background: #8d2663;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
   }
@@ -39,11 +39,12 @@ const CheckBox = styled.input`
   width: 42px;
   height: 26px;
   &:checked + ${CheckBoxLabel} {
-    background: #8d2663;
+    background: #bebebe;
     &::after {
       content: "";
       display: block;
       border-radius: 50%;
+      background: #ffffff;
       width: 18px;
       height: 18px;
       margin-left: 21px;
@@ -52,13 +53,14 @@ const CheckBox = styled.input`
   }
 `;
 const WholeWrapper = styled.div`
-
+  background-color: ${props => props.primary ? "white" : "#2d2d2d"};;
 `
 
 const Wrapper = styled.div`
-  background-color: ${props => props.primary ? "#2d2d2d" : "white"};;
-  color: ${props => props.primary ? "white" : "black"};
   height: 100vh;
+  background-color: ${props => props.primary ? "white" : "#2d2d2d"};;
+  color: ${props => props.primary ? "black" : "white"};
+  
 `
 
 const PlusButton = styled.button`
@@ -70,7 +72,7 @@ const PlusButton = styled.button`
   height: 50px;
 	width: 120px;
   border-radius: 30%;
-  border-color: white;
+  /* border-color: white; */
   border: none;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04);
   &:hover{
@@ -84,6 +86,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  height: 100%;
   /* gap: 1px 1px; */
   grid-template-areas: "Intro Intro Search Search" "Main Main Main Main" "Main Main Main Main";
 `
@@ -191,28 +194,28 @@ class Home extends Component {
         {this.state.night ?  
         <Wrapper primary>
           
-        <Container>
-        
-          <Intro>
-            <MyProfile /></Intro>
-          
-          <Search>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox" type="checkbox" onClick={this.handleColour}/>
-              <CheckBoxLabel htmlFor="checkbox" />
-            </CheckBoxWrapper>
-          </Search>
+            <Container>
+            
+              <Intro>
+                <MyProfile /></Intro>
+              
+              <Search>
+                <CheckBoxWrapper>
+                  <CheckBox id="checkbox" type="checkbox" onClick={this.handleColour}/>
+                  <CheckBoxLabel htmlFor="checkbox" />
+                </CheckBoxWrapper>
+              </Search>
 
-          
-          {/* <Search><Form addTopic={this.addTopic} style={Search}/></Search> */}
-          <Main>
-            <PlusButton onClick={this.handleClick.bind(this, 'Form')}> Add new Topic </PlusButton>
-            {this._renderSubComp()}
-            <DisplayTopics style={Main} topics={this.state.topics} removeTopic={this.removeTopic} />
-          </Main>
-        </Container>
+              
+              {/* <Search><Form addTopic={this.addTopic} style={Search}/></Search> */}
+              <Main>
+                <PlusButton onClick={this.handleClick.bind(this, 'Form')}> Add new Topic </PlusButton>
+                {this._renderSubComp()}
+                <DisplayTopics style={Main} topics={this.state.topics} removeTopic={this.removeTopic} />
+              </Main>
+            </Container>
 
-      </Wrapper>
+          </Wrapper>
 
             : 
 
