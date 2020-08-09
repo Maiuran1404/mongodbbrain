@@ -21,7 +21,7 @@ class Topicpage extends Component {
   compon
 
   componentDidMount = () => {
-    // this.fetchTopic();
+    this.fetchTopic();
   };
 
   componentWillMount = () => {
