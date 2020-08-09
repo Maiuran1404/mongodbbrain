@@ -1,4 +1,5 @@
 // Importing Modules
+require('dotenv').config()
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -18,7 +19,7 @@ const app = express();
 const log = console.log;
 const PORT = process.env.PORT || 8080; // Step 1
 
-const MONGODB_URI = 'mongodb+srv://maiuran:maiuran@rest.m3zlv.mongodb.net/rest?retryWrites=true&w=majority';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Step 2
 mongoose.connect( MONGODB_URI || 'mongodb://localhost/my_database', {
