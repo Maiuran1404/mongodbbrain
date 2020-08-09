@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { TextField} from '@material-ui/core';
 import axios from 'axios';
 import styled from 'styled-components';
 
@@ -22,6 +22,19 @@ const Container = styled.div`
   /* width: 30% ;
   margin: 20px;
   padding: 10px; */
+`
+const Button = styled.button`
+  background-color: #8d2663;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  margin: 0 auto;
+  margin-left: 3%;
+  width: fit-content;
+  height: 30px;
+  border: 0px solid black;
+  position: relative;
+  border-radius: 10%;
 `
 
 class Form extends Component {
@@ -58,6 +71,7 @@ class Form extends Component {
     window.location.reload(); 
   };
   render() {
+    const CHARACTER_LIMIT = 280
     return (
       <Container>
         <form className="form noValidate" autoComplete="off" onSubmit={this.submit}>
@@ -67,6 +81,15 @@ class Form extends Component {
             label="Topic Title"
             name="topicTitle"
             onChange={this.handleChange}
+            style = {{width: 400}}
+            inputProps={{
+              maxlength: CHARACTER_LIMIT
+            }}
+            // value={values.name}
+            helperText={`${this.state.topicTitle.length}/${CHARACTER_LIMIT}`}
+            // onChange={handleChange("name")}
+            margin="normal"
+            variant="outlined"
           />
 
           <TextField
@@ -75,9 +98,19 @@ class Form extends Component {
             id="standard-dense"
             onChange={this.handleChange}
             label="description"
+            style = {{width: 400}}
+            inputProps={{
+              maxlength: CHARACTER_LIMIT
+            }}
+            // value={values.name}
+            helperText={`${this.state.description.length}/${CHARACTER_LIMIT}`}
+            // onChange={handleChange("name")}
+            margin="normal"
+            variant="outlined"
           />
 
-          <Button onClick={this.submit}> Submit </Button>
+          <Button variant="contained" color="primary" onClick={this.submit}> Submit </Button>
+          
 
         </form>
       </Container>

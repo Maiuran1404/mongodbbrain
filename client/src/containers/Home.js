@@ -66,12 +66,13 @@ const Wrapper = styled.div`
 const PlusButton = styled.button`
   color: black;
   padding: 5px;
-  background-color: #7C9CBF;
-  margin-left: 930px;
+  background-color: #8d2663;
+  color: white;
+  margin-left: 960px;
   margin-top: 10px;
-  height: 50px;
-	width: 120px;
-  border-radius: 30%;
+  height: 40px;
+	width: fit-content;
+  border-radius: 10%;
   /* border-color: white; */
   border: none;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.04);

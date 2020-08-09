@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, Link } from 'react';
 import axios from 'axios';
 import NoteForm from '../components/NoteForm';
 import styled from 'styled-components';
@@ -92,6 +92,23 @@ const AddContainer = styled.div`
   margin-top: 0%;
 `
 
+const Button = styled.a`
+  /* display: inline-block; */
+  border-radius: 12px;
+  padding: 1rem 5px;
+  margin: 1rem 1rem;
+  width: 12%;
+  height: 5%;
+  background: #8d2663;
+  text-decoration: none;
+  margin-left: 26%;
+  color: white;
+  /* border: 1px solid black; */
+  position: relative;
+  /* right: -250px; */
+  float: left;
+`
+
 class Topicpage extends Component {
 
   constructor(props) {
@@ -166,6 +183,7 @@ class Topicpage extends Component {
                       <HeadContainer>
                         <TopicTitle>{this.state.topicTitle}</TopicTitle>
                         <TopicSubtitle>{this.state.description}</TopicSubtitle>
+                        <Button as={Link} href='/'> Home </Button>
                       </HeadContainer>
 
                       <AddContainer>
