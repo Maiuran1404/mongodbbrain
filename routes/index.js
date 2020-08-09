@@ -1,9 +1,10 @@
 const express = require('express');
+const router = express.Router();
 const { isEmpty } = require('lodash');
 const User = require('../models/user');
 const Topic = require('../models/topic');
 const TopicNote = require('../models/topicnote');
-const router = express.Router();
+
 
 router.post('/add', async (req, res) => {
     if (isEmpty(req.body)) {
