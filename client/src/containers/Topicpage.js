@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import NoteForm from '../components/NoteForm';
 
@@ -14,6 +14,7 @@ class Topicpage extends Component {
     };
     // this.removeTopic = this.removeTopic.bind(this);
     this.fetchTopic = this.fetchTopic.bind(this);
+    this.addNote = this.addNote.bind(this);
     // this.addTopic = this.addTopic.bind(this);
 }
 
@@ -82,17 +83,25 @@ class Topicpage extends Component {
     console.log('haloå, no',notes)
     return (
       <div>
-          <NoteForm _id={this.state.topicId} />
-          <h1>{this.state.topicId}</h1>
-          <p>{this.state.topicTitle}</p>
-          <p>{this.state.description}</p>
-          {/* <p>{this.state.notes}</p> */}
-        {console.log('Maayoo' + this.state.notes)}
-          {
-              this.state.notes.length > 0 && this.state.notes.map((note, i) => (
-                    <p key={i}>{note.note}</p>
-              ))
-          }
+          <h1>My notes</h1>
+          { this.state.notes &&        
+                  <Fragment>
+                    <NoteForm _id={this.state.topicId} />
+                            <h1>{this.state.topicId}</h1>
+                            <p>{this.state.topicTitle}</p>
+                            <p>{this.state.description}</p>
+                            {/* <p>{this.state.notes}</p> */}
+                          {console.log('Maayoo' + this.state.notes)}
+                            {
+                                this.state.notes.length > 0 && this.state.notes.map((note, i) => (
+                                      <p key={i}>{note.note}</p>
+                                ))
+                            }
+                            
+                  </Fragment>   
+          } 
+
+
       </div>
     );
   }
